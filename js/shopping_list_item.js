@@ -12,6 +12,6 @@ ShoppingListItem.prototype.uncheck = function(){
   this.is_done = false;
 };
 
-ShoppingListItem.prototype.render = function(){
-  return '<li class="'+ this.is_done +'"><span>'+ this.name+"    " + this.description+'</span> <span>asdas</span></li>';
+ShoppingListItem.prototype.render = function(idx){
+  return '<li class="'+ this.is_done +'"><span><input type="checkbox" checked="'+this.is_done+'">' + this.name+ '        ' + this.description+'</span> <span onclick="removeItemButtonClicked()">DOWN</span></li>';
 };
