@@ -1,0 +1,29 @@
+body {
+	/* GLORIOUS COMIC SANS */
+	font-family: "Comic Sans MS", sans-serif;
+	background: #CCC;
+	font-size: 16px;
+}
+ul {
+	margin: 5px;
+	padding: 0;
+}
+li {
+	margin: 0;
+	padding: 16px;
+	width: 666px;
+	display: block;
+	border: thin solid #666;
+}
+
+.damn_button {
+	width: 100px;
+}
+
+.true div{
+	color: green;
+}
+
+.false div{
+	color: red;
+}

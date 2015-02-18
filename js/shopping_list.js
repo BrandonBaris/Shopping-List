@@ -3,17 +3,13 @@ function ShoppingList(){
 }
 
 ShoppingList.prototype.additem = function ( item ){
-    return this.items.push(item);
-  };
-
-/*ShoppingList.prototype.render = function(){
-  var someshit;
-  for (i=0;i<this.items.length;i++){
-    someshit += '<ul>'+ this.items[i].name + this.items[i].description+'</ul>';
- }
- return someshit;
+  if ((item instanceof ShoppingListItem) === false) {
+    console.log('Not an item');
+    return false;
+  }
+  return this.items.push(item);
 };
-*/
+
 ShoppingList.prototype.removeItem = function ( item ){
   if (item === undefined) {
     if (this.items.length > 0 ){
@@ -23,19 +19,19 @@ ShoppingList.prototype.removeItem = function ( item ){
       return false;
     }
   }
-  if (this.items.Indexof(item) == -1){
+  if (this.items.indexOf(item) === -1){
     return false;
   }
-  if (item){
-    this.items.splice(this.items.Indexof(item),this.items.Indexof(item)+1);
+  if (this.items.indexOf(item)!== -1){
+    this.items.splice(this.items.indexOf(item),1);
     return true;
   }
 };
 
 ShoppingList.prototype.render = function(){
-  var someshit;
-  for (i=0;i<this.items.length;i++){
-    someshit += '<ul>'+ this.items[i].render() + '</ul>';
+  var renderList = '';
+  for (var i=0;i<this.items.length;i++){
+    renderList += '<ul>' + this.items[i].render(i) + '</ul>';
  }
- return someshit;
+ return renderList;
 };
